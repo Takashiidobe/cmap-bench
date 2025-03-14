@@ -1,0 +1,28 @@
+[package]
+name = "cmap-bench"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bustle = "0.5.1"
+dashmap = "6.1.0"
+rand = { version = "0.8", features = ["small_rng"] }
+scopeguard = "1"
+tracing = { version = "0.1", features = ["std"], default-features = false }
+
+
+[dev-dependencies]
+tracing-subscriber = "0.3.8"
+num_cpus = "1"
+
+[[bench]]
+name = "arc_mutex_std"
+harness = false
+
+[[bench]]
+name = "arc_rwlock_std"
+harness = false
+
+[[bench]]
+name = "arc_dashmap"
+harness = false
